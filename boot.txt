@@ -1,0 +1,16 @@
+setenv bootargs "console=tty1 console=ttyS0,115200 root=/dev/mmcblk0p2 rw rootwait"
+
+setenv bootpart 0:1
+setenv bootdevice mmc
+
+setenv kernel_path /boot/Image
+setenv dtb_path /boot/dtbs/$(uname -m)/[your-device-tree].dtb
+setenv initramfs_path /boot/initramfs-linux.img
+
+load ${bootdevice} ${bootpart} ${kernel_addr_r} ${kernel_path}
+
+load ${bootdevice} ${bootpart} ${fdt_addr_r} ${dtb_path}
+
+load ${bootdevice} ${bootpart} ${ramdisk_addr_r} ${initramfs_path}
+
+booti ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
