@@ -29,7 +29,7 @@ main() {
     create_mount_point
     backup_fstab
     add_fstab_entry
-    echo "New fstab entry added successfully."
+    echo "New /etc/fstab entry added successfully."
 }
 
 if [ "$(id -u)" -ne 0 ]; then
