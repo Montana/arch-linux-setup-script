@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SD_CARD="/dev/sdx" # Replace /dev/sdx with your SD card device. Be very careful with this!
+SD_CARD="/dev/sdx"
 ARCHLINUX_ARM_URL="http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz"
 
 echo "Partitioning and formatting the SD card..."
